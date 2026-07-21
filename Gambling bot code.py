@@ -79,7 +79,7 @@ def deposit():
             if amount > 0:
                 break
             else:
-                print('You can not play if you broke')
+                print('You can not play if you are broke')
         else:
             print('A number dumbass' )
 
@@ -88,7 +88,7 @@ def deposit():
 
 def get_number_of_lines():
     while True:
-        lines = input("How many lines you betting boy (1-" + str(LINES_BET) + ")? ")
+        lines = input("How many lines you betting (1-" + str(LINES_BET) + ")? ")
         if lines.isdigit():
             lines = int(lines)
             if 1 <= lines <= LINES_BET:
@@ -110,7 +110,7 @@ def get_bet():
             else:
                 print(f'amount must be between ${MIN_BET} - ${MAX_BET}')
         else:
-            print('A number dumbass' )
+            print('You must say a number' )
 
     return bet_ting
 
@@ -123,7 +123,7 @@ def spin(balance):
         total_bet = bet * lines
         if total_bet > balance:
             print(
-                f"you don't have enought money punk you only got ${balance}"
+                f"you don't have enought money you only have ${balance}"
             )
         else:
             break
@@ -134,7 +134,7 @@ def spin(balance):
     print_slot_machine(slots)
     winnings, winning_lines = check_winnings(slots, lines, bet, symbol_value)
     print(f"you won ${winnings}." )
-    print(f"You wont on lines", *winning_lines)
+    print(f"You won on lines", *winning_lines)
     return winnings - total_bet
 
 
